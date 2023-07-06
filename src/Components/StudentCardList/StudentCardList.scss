@@ -1,0 +1,15 @@
+.student-card-list-container {
+    border: 1px solid rgb(201, 200, 200);
+    border-radius: 10px;
+    overflow-y: scroll;
+    height: 80vh;
+    width: 80vw;
+    box-shadow: 0px 2px 10px rgb(69, 69, 69);
+
+    & >*{
+        border-bottom: 1px solid rgb(244, 242, 242);
+    }
+}
+/* 
+& > * -> every child of the element
+*/

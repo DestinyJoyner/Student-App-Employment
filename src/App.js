@@ -1,9 +1,11 @@
+import StudentCardList from './Components/StudentCardList/StudentCardList';
+
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <h1>Student App</h1>
+      <StudentCardList />
     </div>
   );
 }
