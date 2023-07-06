@@ -1,4 +1,4 @@
-import "./StudentCard.css"
+import "./StudentCard.scss"
 function StudentCard(props) {
     return (
         <div className = "studentCard">
