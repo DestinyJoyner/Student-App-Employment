@@ -22,3 +22,8 @@
     outline: none;
     border-bottom: 1px solid black;
 }
+/* 
+    Hide placeholder when input in focus
+.search-filter-searchbar:focus::placeholder{
+    color: transparent;
+} */

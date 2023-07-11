@@ -7,10 +7,13 @@ function SearchFilter({ setFunction, students }) {
   function handleSearchBar(e) {
     const value = e.target.value;
     setSearchInput(value);
+    
     if (!value) {
       setFunction(students);
     } else {
-      filterStudents(value, students, setFunction);
+        // filters out symbols for val
+    const onlyLettersVal= value.split("").filter(el => (/[a-z]/gi).test(el)).join("")
+      filterStudents(onlyLettersVal, students, setFunction);
     }
   }
 
@@ -20,6 +23,8 @@ function SearchFilter({ setFunction, students }) {
       const first = el.firstName;
       const last = el.lastName;
       const regex = new RegExp(val, "gi");
+
+
       if (regex.test(first) || regex.test(last)) {
         return el;
       }
