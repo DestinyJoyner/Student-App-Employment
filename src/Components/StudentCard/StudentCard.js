@@ -3,10 +3,9 @@ import "./StudentCard.scss";
 function StudentCard({obj}) {
   const { city, company, email, firstName, grades, id, lastName, pic, skill} = obj
 
-  const averageGrades = grades.reduce((acc,el) => {
+  const averageGrades = grades.reduce((acc,el) => 
       acc+= +el
-      return acc
-  }, 0) / (grades.length)
+  , 0) / (grades.length)
 
   return (
     <div className="studentCard">
