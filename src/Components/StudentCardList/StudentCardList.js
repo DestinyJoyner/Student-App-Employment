@@ -20,8 +20,8 @@ useEffect(() => {
         <div className="student-card-list-container">
             <SearchFilter 
             students = {studentData}
-            stateVar = {searchResult}
             setFunction={setSearchResult}/>
+            
             <section className="student-cards">
            {
             searchResult.map(el => <StudentCard

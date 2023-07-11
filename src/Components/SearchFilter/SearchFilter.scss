@@ -5,16 +5,20 @@
     display: grid;
     justify-items: center;
     background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .search-filter-searchbar {
+
     width: 95%;
     border: none;
-    border-bottom: 2px solid purple;
+    border-bottom: 1px solid rgb(244, 242, 242);
     font-size: 18px;
-    color: purple;
-
+    font-family: "Raleway";
 }
+
 .search-filter-searchbar:focus {
     outline: none;
+    border-bottom: 2px solid black;
 }
