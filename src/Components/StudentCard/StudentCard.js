@@ -1,4 +1,5 @@
 import { useState } from "react"
+import StudentGrades from "./StudentGrades";
 import {FaPlus, FaMinus} from "react-icons/fa"
 import "./StudentCard.scss";
 
@@ -30,6 +31,12 @@ function StudentCard({obj}) {
           <span>Company: {company}</span>
           <span>Skill: {skill}</span>
           <span>Average: {averageGrades}%</span>
+          {
+            showScores && 
+            <StudentGrades 
+            gradesArr={grades}
+            />
+          }
         </div>
       </section>
       <button className="studentCard__grades-button"
