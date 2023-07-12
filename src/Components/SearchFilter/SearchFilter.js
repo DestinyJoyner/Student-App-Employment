@@ -5,14 +5,22 @@ function SearchFilter({ setFunction, students }) {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchBar(e) {
-    const value = e.target.value;
-    setSearchInput(value);
-    
-    if (!value) {
+    const searchValue= e.target.value;
+    setSearchInput(searchValue);
+
+    if (!searchValue) {
       setFunction(students);
     } else {
-        // filters out symbols for val
-    const onlyLettersVal= value.split("").filter(el => (/[a-z]/gi).test(el)).join("")
+        // const splitSearchValue = searchValue.split(" ")
+        const onlyLettersVal = searchValue
+        .split("")
+        .filter((el) => /[a-z]/gi.test(el))
+        .join("");
+      // filters out symbols for val
+    //   const onlyLettersVal = searchValue
+    //     .split("")
+    //     .filter((el) => /[a-z]/gi.test(el))
+    //     .join("");
       filterStudents(onlyLettersVal, students, setFunction);
     }
   }
@@ -24,10 +32,10 @@ function SearchFilter({ setFunction, students }) {
       const last = el.lastName;
       const regex = new RegExp(val, "gi");
 
-
-      if (regex.test(first) || regex.test(last)) {
+      if (regex.test(first) || regex.test(last) || regex.test(`${first}${last}`)) {
         return el;
       }
+      
     });
     setFunction(filteredStudents);
   }
