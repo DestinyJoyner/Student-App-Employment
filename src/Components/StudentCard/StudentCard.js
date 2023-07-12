@@ -1,11 +1,17 @@
+import { useState } from "react"
+import {FaPlus, FaMinus} from "react-icons/fa"
 import "./StudentCard.scss";
 
 function StudentCard({obj}) {
   const { city, company, email, firstName, grades, id, lastName, pic, skill} = obj
 
+  const [showScores, setShowScores] = useState(false)
+
   const averageGrades = grades.reduce((acc,el) => 
       acc+= +el
   , 0) / (grades.length)
+
+  
 
   return (
     <div className="studentCard">
@@ -26,6 +32,10 @@ function StudentCard({obj}) {
           <span>Average: {averageGrades}%</span>
         </div>
       </section>
+      <button className="studentCard__grades-button"
+      onClick={(()=> setShowScores(!showScores))}>
+        { showScores ? <FaMinus /> : <FaPlus /> }
+      </button>
     </div>
   );
 }

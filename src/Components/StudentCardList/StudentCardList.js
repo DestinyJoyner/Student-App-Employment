@@ -20,13 +20,19 @@ function StudentCardList() {
   }, []);
   return (
     <div className="student-card-list-container">
-      <SearchFilter students={studentData} setFunction={setSearchResult} />
+      <SearchFilter 
+      students={studentData} 
+      setFunction={setSearchResult} />
+
       <section className="student-cards">
         {
         searchResult.length === 0 ? (
           <NoSearchResults />
         ) : (
-          searchResult.map((el) => <StudentCard key={el.id} obj={el} />)
+          searchResult.map(el => 
+          <StudentCard 
+          key={el.id} 
+          obj={el} />)
         )
         }
       </section>

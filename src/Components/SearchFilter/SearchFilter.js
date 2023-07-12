@@ -7,7 +7,7 @@ function SearchFilter({ setFunction, students }) {
   function handleSearchBar(e) {
     const searchValue= e.target.value;
     setSearchInput(searchValue);
-
+// More descriptive step by step labeling and variables
     if (!searchValue) {
       setFunction(students);
     } else {

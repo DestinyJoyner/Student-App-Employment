@@ -1,14 +1,27 @@
 .studentCard {
-  display: flex;
-  column-gap: 30px;
-  align-items: center;
+  // display: flex;
+  // column-gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  // align-items: center;
   height: 160px;
+  width: inherit;
   font-family: "Raleway";
   background-color: white;
   padding: 10px 15px;
   &_image {
     border-radius: 50%;
     height:70px;
+}
+  &__grades-button {
+    all: unset;
+    align-self: flex-start;
+    margin-top: 2vh;
+    & svg {
+      width: 2em;
+      height: 2em;
+      color: gray;
+    }
 }
  
 }
