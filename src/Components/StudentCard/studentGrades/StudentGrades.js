@@ -5,12 +5,14 @@ function StudentGrades({gradesArr}) {
         <div className='studentCardGrades'>
             {
                 gradesArr.map((el,i) => 
-                <section className="studentCardGrades__List">
+                <section
+                key={i}
+                className="studentCardGrades__List">
                     <span>Test {i+1}:</span>
                     <span>{el}%</span>
-                </section> )
+                </section> 
+                )
             }
-            
         </div>
     );
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import StudentCard from "../StudentCard/StudentCard";
 import SearchFilter from "../SearchFilter/SearchFilter";
-import NoSearchResults from "./NoSearchResults.js";
+import NoSearchResults from "./noSearchResults/NoSearchResults.js";
 import "./StudentCardList.scss";
 
 function StudentCardList() {

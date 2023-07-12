@@ -1,5 +1,5 @@
 import { useState } from "react"
-import StudentGrades from "./StudentGrades";
+import StudentGrades from "./studentGrades/StudentGrades";
 import {FaPlus, FaMinus} from "react-icons/fa"
 import "./StudentCard.scss";
 
@@ -12,8 +12,6 @@ function StudentCard({obj}) {
       acc+= +el
   , 0) / (grades.length)
 
-  
-
   return (
     <div className="studentCard">
       <div className="studentCard_image-container">
@@ -24,9 +22,9 @@ function StudentCard({obj}) {
         />
       </div>
 
-      <section className="student-card-info">
-        <h2 className="student-card-name"> {firstName} {lastName} </h2>
-        <div className="student-card-info-details">
+      <section className="studentCard_info">
+        <h2 className="studentCard_name"> {firstName} {lastName} </h2>
+        <div className="studentCard_info_details">
           <span>Email: {email}</span>
           <span>Company: {company}</span>
           <span>Skill: {skill}</span>
@@ -39,7 +37,9 @@ function StudentCard({obj}) {
           }
         </div>
       </section>
-      <button className="studentCard__grades-button"
+      
+      <button 
+      className="studentCard__grades-button"
       onClick={(()=> setShowScores(!showScores))}>
         { showScores ? <FaMinus /> : <FaPlus /> }
       </button>
